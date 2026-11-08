@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1c1412;
+  --color-booth: #2a1e1a;
+  --color-panel: #3a2a24;
+  --color-line: #5c433a;
+  --color-cream: #f6eadc;
+  --color-muted: #c9b4a4;
+  --color-shutter: #ff4b3e;
+  --color-gold: #ffc24b;
+  --font-display: "Paytone One", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background:
+      radial-gradient(
+        ellipse 90% 42% at 50% -8%,
+        color-mix(in srgb, var(--color-shutter) 32%, transparent),
+        transparent 60%
+      ),
+      var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+.booth-frame {
+  background-color: var(--color-booth);
+  background-image: radial-gradient(circle, var(--color-gold) 2.5px, transparent 3px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+}
+
+.mirror-x {
+  transform: scaleX(-1);
+}
+
+.count-num {
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  text-shadow: 0 0.12em 0 var(--color-ink);
+  animation: count-in 280ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.flash-overlay {
+  background: var(--color-cream);
+  animation: flash-out 420ms ease-out forwards;
+  pointer-events: none;
+}
+
+.live-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+.strip-rail {
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(circle, var(--color-ink) 2.5px, transparent 3px),
+    radial-gradient(circle, var(--color-ink) 2.5px, transparent 3px);
+  background-size: 14px 18px, 14px 18px;
+  background-repeat: repeat-y, repeat-y;
+  background-position: left center, right center;
+}
+
+@keyframes count-in {
+  from {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flash-out {
+  from {
+    opacity: 0.94;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .count-num,
+  .live-dot {
+    animation: none;
+  }
+
+  .flash-overlay {
+    animation-duration: 80ms;
+  }
+}

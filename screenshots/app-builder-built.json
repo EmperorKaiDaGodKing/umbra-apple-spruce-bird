@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Popbooth",
+      "hasCanvas": false,
+      "bodyTextLen": 554,
+      "bodyTextHash": "33af7f94d076427055ae9ff30733a4da6478955b9f60a65c8d980bf9e98b0879",
+      "bodyTextPrefix": "Popbooth A sticker booth for your webcam Ready Ready when you ar",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Popbooth",
+      "hasCanvas": false,
+      "bodyTextLen": 317,
+      "bodyTextHash": "0f44aabcdc1134db892f92d264e55fbe02d3bf63faf2fae3b48a101cb9485266",
+      "bodyTextPrefix": "Popbooth A sticker booth for your webcam Ready Ready when you ar",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
